@@ -1,0 +1,23 @@
+{
+    "name": "hexlet/code",
+    "license": "proprietary",
+    "description": "compare json or yaml files",
+    "type": "project",
+    "bin": [
+        "/bin/gendiff"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AlexeyGoncharenko",
+            "email": "zomorc@gmail.com"
+        }
+    ],
+    "require": {
+        "docopt/docopt": "^1.0"
+    }
+}
