@@ -1,8 +1,11 @@
 #!/usr/bin/env php
 <?php
 
+use function Differ\Differ\genDiff;
+
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+
 if (file_exists($autoloadPath1)) {
 	require_once $autoloadPath1;
 } else {
@@ -24,3 +27,9 @@ Options:
 DOC;
 
 $args = Docopt::handle($doc, array('version' => 'gendiff 1.0'));
+
+$pathToFile1 = $args['<firstFile>'];
+$pathToFile2 = $args['<secondFile>'];
+$format = $args['--format'];
+
+print_r(genDiff($pathToFile1, $pathToFile2, $format));
