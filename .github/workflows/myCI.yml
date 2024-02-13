@@ -9,9 +9,14 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
 
       - name: Install
         run: make install
@@ -19,5 +24,17 @@ jobs:
       - name: Validate composer.json and composer.lock
         run: composer validate
 
-      - name: Run linter
+      - name: Run lin
         run: make lint
+
+      - name: Run lint-fix
+        run: make lint-fix
+
+      - name: Run test and publish code coverage
+        uses: paambaati/codeclimate-action@v5.0.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CLIMATE }}
+        with:
+          coverageCommand: make test-coverage
+          coverageLocations: build/logs/clover.xml:clover
+          debug: true

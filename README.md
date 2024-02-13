@@ -2,6 +2,7 @@
 [![Actions Status](https://github.com/AlexeyGorc/php-project-48/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/AlexeyGorc/php-project-48/actions)
 [![myCI](https://github.com/AlexeyGorc/php-project-48/actions/workflows/myCI.yml/badge.svg)](https://github.com/AlexeyGorc/php-project-48/actions/workflows/myCI.yml)   
 [![Maintainability](https://api.codeclimate.com/v1/badges/909b4e06aef62b1e09bc/maintainability)](https://codeclimate.com/github/AlexeyGorc/php-project-48/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/909b4e06aef62b1e09bc/test_coverage)](https://codeclimate.com/github/AlexeyGorc/php-project-48/test_coverage)
 
 ## Description:
 
