@@ -37,3 +37,26 @@ make install
 bin/gendiff -h
 ```
 [![asciicast](https://asciinema.org/a/OJDJK56oS8mZl67hiumcicmdl.svg)](https://asciinema.org/a/OJDJK56oS8mZl67hiumcicmdl)
+
+```sh
+bin/gendiff tests/fixtures/file1.json tests/fixtures/file2.json
+```
+
+[![asciicast](https://asciinema.org/a/Il4dprEXU2Uj2zQsIBreExzLN.svg)](https://asciinema.org/a/Il4dprEXU2Uj2zQsIBreExzLN)
+
+```sh
+bin/gendiff tests/fixtures/file1.yaml tests/fixtures/file2.yaml
+```
+
+[![asciicast](https://asciinema.org/a/fsvDIvj20jCToBL6gKSeChsrV.svg)](https://asciinema.org/a/fsvDIvj20jCToBL6gKSeChsrV)
+
+```sh
+bin/gendiff --format plain tests/fixtures/file1.json tests/fixtures/file2.json
+```
+
+[![asciicast](https://asciinema.org/a/Ta3JkASHchP028Hx8MKIDTIz7.svg)](https://asciinema.org/a/Ta3JkASHchP028Hx8MKIDTIz7)
+
+```sh
+bin/gendiff --format json tests/fixtures/file1.json tests/fixtures/file2.json
+```
+[![asciicast](https://asciinema.org/a/MjVHbnqRjUCnUy7tCMsH7krr8.svg)](https://asciinema.org/a/MjVHbnqRjUCnUy7tCMsH7krr8)
