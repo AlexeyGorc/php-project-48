@@ -31,7 +31,7 @@ jobs:
         run: make lint-fix
 
       - name: Run test and publish code coverage
-        uses: paambaati/codeclimate-action@v2.6.0
+        uses: paambaati/codeclimate-action@v5.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CLIMATE }}
         with:
