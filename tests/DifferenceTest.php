@@ -17,6 +17,7 @@ class DifferenceTest extends TestCase
     {
         return [
             ['file1.json', 'file2.json', 'stylish', 'resultStylish.txt'],
+            ['file1.yaml', 'file2.yaml', 'stylish', 'resultStylish.txt'],
         ];
     }
 
