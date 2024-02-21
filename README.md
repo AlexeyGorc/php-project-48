@@ -37,29 +37,3 @@ make install
 bin/gendiff -h
 ```
 [![asciicast](https://asciinema.org/a/OJDJK56oS8mZl67hiumcicmdl.svg)](https://asciinema.org/a/OJDJK56oS8mZl67hiumcicmdl)
-
----
-### Comparing flat files
-```sh
-bin/gendiff tests/fixtures/file1.json tests/fixtures/file2.json
-```
-
-[![asciicast](https://asciinema.org/a/OFlBCY8OrxXZLt1zAcZIK0zsd.svg)](https://asciinema.org/a/OFlBCY8OrxXZLt1zAcZIK0zsd)
-
-### Comparing yaml files
-```sh
-bin/gendiff tests/fixtures/file1.yaml tests/fixtures/file2.yaml
-```
-
-[![asciicast](https://asciinema.org/a/HbZ9o1YBJR7HvCREg58J7Rabo.svg)](https://asciinema.org/a/HbZ9o1YBJR7HvCREg58J7Rabo)
-
----
-
-### Recursive comparison of json files with nested structured
-- bin/gendiff tests/fixtures/file1_tree.json tests/fixtures/file2_tree.json
-
-[![asciicast](https://asciinema.org/a/tmtlvQ3SjeLUxxakhKmqLbJf8.svg)](https://asciinema.org/a/tmtlvQ3SjeLUxxakhKmqLbJf8)
-
----
-
-### Comparison output in flat format:

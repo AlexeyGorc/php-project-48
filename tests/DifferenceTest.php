@@ -16,8 +16,8 @@ class DifferenceTest extends TestCase
     public static function additionProvider(): mixed
     {
         return [
-            ['file1.json', 'file2.json', 'stylish', 'resultStylish.txt'],
-            ['file1.yaml', 'file2.yaml', 'stylish', 'resultStylish.txt'],
+            ['file1.json', 'file2.json', 'stylish', 'formatStylish.txt'],
+            ['file1.yaml', 'file2.yaml', 'stylish', 'formatStylish.txt'],
         ];
     }
 
