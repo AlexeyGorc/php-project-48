@@ -34,7 +34,3 @@ jobs:
         uses: paambaati/codeclimate-action@v5.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CLIMATE }}
-        with:
-          coverageCommand: make test-coverage
-          coverageLocations: build/logs/clover.xml:clover
-          debug: true
