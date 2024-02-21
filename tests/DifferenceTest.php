@@ -18,6 +18,8 @@ class DifferenceTest extends TestCase
         return [
             ['file1.json', 'file2.json', 'stylish', 'formatStylish.txt'],
             ['file1.yaml', 'file2.yaml', 'stylish', 'formatStylish.txt'],
+            ['file1.json', 'file2.json', 'plain', 'formatPlain.txt'],
+            ['file1.yaml', 'file2.yaml', 'plain', 'formatPlain.txt'],
         ];
     }
 
