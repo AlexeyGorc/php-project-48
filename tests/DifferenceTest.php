@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Test;
+namespace Differ\Tests\DifferenceTest;
 
 use PHPUnit\Framework\TestCase;
-
-use function Differ\Differ\genDiff;
+use PHPUnit\Framework\Attributes\DataProvider;
+use Differ\Differ;
 
 class DifferenceTest extends TestCase
 {
@@ -13,23 +13,20 @@ class DifferenceTest extends TestCase
         return __DIR__ . "/fixtures/{$filename}";
     }
 
-    /**
-     * @dataProvider argumentProvider
-     */
-    public function testGenDiff($firstPath, $secondPath, $expectedFile, $style = 'stylish')
-    {
-        $firstPath = $this->getFixturePath($firstPath);
-        $secondPath = $this->getFixturePath($secondPath);
-        $expectedFile = $this->getFixturePath($expectedFile);
-
-        $this->assertStringEqualsFile($expectedFile, genDiff($firstPath, $secondPath, $style));
-    }
-    
-    public static function argumentProvider(): array
+    public static function additionProvider(): mixed
     {
         return [
-          ['file1.json', 'file2.json', 'result_formatter_stylish'],
-          ['file1.yaml', 'file2.yaml', 'result_formatter_stylish'],
+            ['file1.json', 'file2.json', 'stylish', 'resultStylish.txt'],
         ];
+    }
+
+    #[DataProvider('additionProvider')]
+    public function testGenDiff(string $file1, string $file2, string $format, string $excepted): void
+    {
+        $fixture1 = $this->getFixturePath($file1);
+        $fixture2 = $this->getFixturePath($file2);
+        $pathToExpected = $this->getFixturePath($excepted);
+
+        $this->assertStringEqualsFile($pathToExpected, Differ\genDiff($fixture1, $fixture2, $format));
     }
 }
