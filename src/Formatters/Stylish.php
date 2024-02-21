@@ -33,7 +33,7 @@ function makeRender(array $astTree, int $depth = 0): string
         }
     }, $astTree);
 
-    return "{\n" . implode("", $result) . "{$indent}}\n";
+    return "{\n" . implode("", $result) . "{$indent}}";
 }
 
 function buildIndent(int $depth, int $numOfIndents): string
