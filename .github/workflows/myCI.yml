@@ -24,14 +24,14 @@ jobs:
       - name: Validate composer.json and composer.lock
         run: composer validate
 
-      - name: Run lin
+      - name: Run lint
         run: make lint
 
       - name: Run lint-fix
         run: make lint-fix
 
       - name: Run test and publish code coverage
-        uses: paambaati/codeclimate-action@v5.0.0
+        uses: paambaati/codeclimate-action@v2.6.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CLIMATE }}
         with:
