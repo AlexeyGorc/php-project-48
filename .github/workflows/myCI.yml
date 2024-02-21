@@ -30,4 +30,5 @@ jobs:
       - name: Run lint-fix
         run: make lint-fix
 
-
+      - name: Run tests
+        run: make test
