@@ -3,7 +3,7 @@
 namespace Differ\Differ;
 
 use function Differ\Formatters\getFormat;
-use function Differ\Parser\getParse;
+use function Differ\Parser\getParsedContent;
 use function Functional\sort;
 
 function parseFile(string $filePath): object
@@ -14,7 +14,7 @@ function parseFile(string $filePath): object
 
     $fileContent = (string) file_get_contents($filePath, true);
     $extension = pathinfo($filePath, PATHINFO_EXTENSION);
-    return getParse($fileContent, $extension);
+    return getParsedContent($fileContent, $extension);
 }
 
 function genDiff(string $pathToFirstFile, string $pathToSecondFile, string $formatter = 'stylish'): string
@@ -29,9 +29,8 @@ function computeDiff(object $dataFirstFile, object $dataSecondFile): array
 {
     $data1 = get_object_vars($dataFirstFile);
     $data2 = get_object_vars($dataSecondFile);
-    $mergeKeys = array_merge(array_keys($data1), array_keys($data2));
-    $sortKeys = sort($mergeKeys, fn ($left, $right) => strcmp($left, $right));
-    $orderedKeys = array_unique($sortKeys);
+    $mergedKeys = array_unique(array_merge(array_keys($data1), array_keys($data2)));
+    $sortedKeys = sort($mergedKeys, fn ($left, $right) => strcmp($left, $right));
 
     return array_map(function ($key) use ($data1, $data2) {
         switch (true) {
@@ -47,5 +46,5 @@ function computeDiff(object $dataFirstFile, object $dataSecondFile): array
             default:
                 return ['key' => $key, 'value1' => $data1[$key], 'value2' => $data2[$key], 'type' => 'updated'];
         }
-    }, $orderedKeys);
+    }, $sortedKeys);
 }

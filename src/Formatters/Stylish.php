@@ -3,7 +3,7 @@
 namespace Differ\Formatters\Stylish;
 
 const NUM_INDENTS = 4;
-function getStylish(array $astTree): string
+function format(array $astTree): string
 {
     return makeRender($astTree);
 }

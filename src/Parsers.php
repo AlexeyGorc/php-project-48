@@ -4,7 +4,7 @@ namespace Differ\Parser;
 
 use Symfony\Component\Yaml\Yaml;
 
-function getParse(string $content, string $extension): object
+function getParsedContent(string $content, string $extension): object
 {
     return match ($extension) {
         'json' => json_decode($content),

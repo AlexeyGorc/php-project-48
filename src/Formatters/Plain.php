@@ -4,7 +4,7 @@ namespace Differ\Formatters\Plain;
 
 use function Functional\flatten;
 
-function getPlain(array $astTree): string
+function format(array $astTree): string
 {
     return implode("\n", flatten(makeRender($astTree, '')));
 }
